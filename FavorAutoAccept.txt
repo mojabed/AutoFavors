@@ -1,0 +1,7 @@
+## Title: Favor Auto Accept
+## Description: Auto accepts and completes favor quests from Freerunner Post Boards.
+## Author: Xpherion
+## Version: 1.0.0
+## APIVersion: 101041
+
+FavorAutoAccept.lua
