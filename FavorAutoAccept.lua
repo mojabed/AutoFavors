@@ -48,7 +48,6 @@ local function TryAdvanceScreen2()
     end
 
     pcall(INTERACTION.SelectChatterOptionByIndex, INTERACTION, 1)
-    d("[FavorAutoAccept] Quest " .. (FavorAutoAccept.isCompleting and "completed" or "accepted") .. "!")
     FavorAutoAccept.inProgress = false
 end
 
@@ -90,7 +89,7 @@ local function TryAdvanceScreen1()
         return
     end
 
-    -- Phase 1: verify body text changed to confirm the advance worked
+    -- verify body text changed to confirm the advance worked
     local bodyOk, bodyText = pcall(ZO_InteractWindowTargetAreaBodyText.GetText,
                                     ZO_InteractWindowTargetAreaBodyText)
     if bodyOk and bodyText and bodyText == FavorAutoAccept.savedBodyText then
@@ -128,6 +127,5 @@ end
 local function OnAddOnLoaded(_, addonName)
     if addonName ~= "FavorAutoAccept" then return end
     EVENT_MANAGER:RegisterForEvent("FavorAutoAccept_Interact", EVENT_CLIENT_INTERACT_RESULT, OnClientInteractResult)
-    d("[FavorAutoAccept] Loaded. /faa for help.")
 end
 EVENT_MANAGER:RegisterForEvent("FavorAutoAccept_Loaded", EVENT_ADD_ON_LOADED, OnAddOnLoaded)
