@@ -8,8 +8,8 @@ Press **E** once on a Freerunner Post Board or Lockbox, the addon skips both dia
 ```
 
 ### Features
-- One-keypress auto-accept from Freerunner Post Boards
-- One-keypress auto-complete at Freerunners Post Lockbox
+- auto accept from Freerunner Post Boards
+- auto complete at Freerunners Post Lockbox
 
 ## Installation
 
@@ -22,6 +22,6 @@ Press **E** once on a Freerunner Post Board or Lockbox, the addon skips both dia
 
 ## Compatibility
 
-- **ESO API Version:** 101041 (Gold Road)
+- **ESO API Version:** 101050
 - **Dependencies:** None
 - **Conflicts:** None known
