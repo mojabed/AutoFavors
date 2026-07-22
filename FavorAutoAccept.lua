@@ -23,7 +23,6 @@ local function SlashHandler(args)
         d("[FavorAutoAccept] Usage: /faa on | off | toggle")
     end
 end
-SLASH_COMMANDS["/faa"] = SlashHandler
 
 local function IsTimedOut()
     return (GetGameTimeMilliseconds() - (FavorAutoAccept.startTime or 0)) > SAFETY_TIMEOUT_MS
@@ -126,6 +125,7 @@ end
 
 local function OnAddOnLoaded(_, addonName)
     if addonName ~= "FavorAutoAccept" then return end
+    SLASH_COMMANDS["/faa"] = SlashHandler
     EVENT_MANAGER:RegisterForEvent("FavorAutoAccept_Interact", EVENT_CLIENT_INTERACT_RESULT, OnClientInteractResult)
 end
 EVENT_MANAGER:RegisterForEvent("FavorAutoAccept_Loaded", EVENT_ADD_ON_LOADED, OnAddOnLoaded)
